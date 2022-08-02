@@ -39,6 +39,34 @@ public class HomeController {
 		return "cadastro-donatario";
 	}
 
+	
+	@GetMapping("/home-logado")
+	public String logado() {
+		return "home-logado";
+	}
+	
+	
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
+	
+
+	@GetMapping("/anuncio")
+	public String anuncio() {
+		return "anuncio";
+	}
+	
+
+	@GetMapping("/esqueceu-senha")
+	public String recuperar() {
+		return "esqueceu-senha";
+	}
+	
+	
+	
+	
+	
 	@PostMapping("/salvar-doador")
 	public String novoDoador(Doador doador, String verificarSenha) {
 		System.out.println("oi, cheguei");

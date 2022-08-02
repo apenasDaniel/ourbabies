@@ -29,6 +29,7 @@
 }
 .visao, .missao{
     font-size: 17px;
+    text-align: justify;
 }
 
 .text{

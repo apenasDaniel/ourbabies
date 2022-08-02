@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500&family=Laila:wght@300;500&family=Open+Sans&family=Roboto:wght@100&family=Ubuntu:ital,wght@0,300;1,300&display=swap');
+
+
+
+.logo{
+    color: white;
+}
+
+.navbar{
+    background-color: #1DCAD3;
+    justify-content: space-around;
+}
+
+.text{
+    color:#F28F8F
+}
+
+.nav-link{
+    color: white;
+    font-size: 22px;
+    font-family:Inter;
+    padding-top: 13px;
+}
+
+
+.btn{
+    background-color:  #1DCAD3;
+    color: white;
+    border: none;
+    border-radius: 7px;
+}
+
+.btn:hover{
+    background-color: #F28F8F;
+}
+

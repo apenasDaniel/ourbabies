@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;500&family=Laila:wght@300;500&family=Open+Sans&family=Roboto:wght@100&family=Ubuntu:ital,wght@0,300;1,300&display=swap');
 
 
@@ -75,4 +74,9 @@
 
 .link-rodape:hover{
  color: rgb(0, 4, 255);
+}
+
+.carrosel {
+    margin-left: 350px;
+    margin-top: 10px;
 }

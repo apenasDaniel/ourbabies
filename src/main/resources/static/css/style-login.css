@@ -1,28 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500&family=Laila:wght@300;500&family=Open+Sans&family=Roboto:wght@100&family=Ubuntu:ital,wght@0,300;1,300&display=swap');
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 header{
     background-color: #1DCAD3;
-} 
-
-  .form{
-    padding-top: 50px;
-  }
+  } 
 
 .logo{
     color: white;
-    font-family: Inter;
+    font-family: Inter;  
 }
 
 .navbar { 
     display: flex;
     justify-content:space-around;
- 
 }
 
 .nav-link{
    color: white;
-   font-size: 21px;
+   font-size: 22px;
    font-family: Inter;
 }
 
@@ -37,8 +36,6 @@ header{
 .wrapper .logo img{
     max-width: 60%;
 }
-
-
 
 .wrapper input:focus {
     box-shadow: none;
@@ -57,11 +54,13 @@ header{
 }
 
 
+
 .btn:hover{
     background-color: #F28F8F;
 }
 
-.titulo-cadastro {
+
+.titulo-login {
     color:#F28F8F;
 
 }
@@ -72,8 +71,12 @@ header{
     font-weight: bold;
 }
 
+
+
 .trocar-senha {
     color:#F28F8F;
     text-decoration: none;
     font-weight: bold;
 }
+
+
