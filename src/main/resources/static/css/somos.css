@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;500&family=Laila:wght@300;500&family=Open+Sans&family=Roboto:wght@100&family=Ubuntu:ital,wght@0,300;1,300&display=swap');
+
+.titulo{
+    color: #1DCAD3 ;
+    font-family: Ubuntu;
+}
+
+.main{
+    background-color: #dfdfdf85;
+
+}
+
+.corpo{
+    padding-top: 40;
+}
+.navbar{
+    background-color: #1DCAD3;
+}
+
+.nav-link{
+    color: white;
+    font-size: 25px;
+    font-family:Inter;
+    padding-top: 13px;
+}
+
+.vm{
+  padding-top: 5%;
+}
+.visao, .missao{
+    font-size: 17px;
+}
+
+.text{
+    font-family: Inter;
+    color: rgba(0, 0, 0, 0.548);
+}
+
+.marketing{
+    margin-top: 20px;
+}
+
+.team{
+    gap:4%;
+    padding-bottom: 30px;
+    background-color: #008e96;
+    font-family: Inter;
+    color: white;
+    border-radius: 5px;
+}
+.name{
+    text-align: center;
+    padding-top: 4px;
+}
+
+.link-footer{
+text-decoration: none;
+font-size: 20px;
+}
+
+
+
+.wrapper{
+    padding:0 0 100px;
+}
+
+
+
+

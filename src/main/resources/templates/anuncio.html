@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/anuncio.css">
+  <title>Entrar</title>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <h1>OurBabies</h1>
+      </div>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cadastro-doador">Doar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cadastro-donatario">Receber</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/somos">Quem somos</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <section class="wrapper">
+    <div class="container mt-5">
+      <div class="text-center">
+        <!-- <div class="logo">
+                    <img src="./assets/images/logo1.png" class="img-fluid" alt="logo">
+                </div> -->
+        <form class="rounded bg-white shadow p-5 col-6 offset-md-3">
+            <div class="container">
+                <h2 class="mb-2 titulo-login">Faça sua doação.</h2>
+                <p class="fs-5 text-secondary">Preencha os campos abaixo.</p>
+            </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="CPFNIS">
+            <label for="floatingInput">Nome do item</label>
+          </div>
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Serviço</label>
+            <select class="form-select" id="inputGroupSelect01">
+              <option selected>Escolher...</option>
+              <option value="1">Babá</option>
+              <option value="2">Cozinheira(o)</option>
+              <option value="3">Faxina</option>
+              <option value="3">Outros</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
+            <textarea class="form-control" placeholder="Descrição do serviço e item." id="exampleFormControlTextarea1" rows="4"></textarea>
+          </div>
+          <div class="input-group">
+            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+          </div>
+          <div class="d-flex justify-content-around mt-4 p-2">
+            <button type="reset" class="btn btn-primary w-25 fs-5">Cancelar</button>
+            <button type="submit" class="btn btn-primary w-25 fs-5">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <footer class="container-rodape d-flex justify-content-center">
+    <div class="rodape">
+      <p class="texto-rodape">&copy; 2022 OurBabies | Todos direitos reservados | <a href="#" class="termos">Termos de
+          serviço</a></p>
+    </div>
+  </footer>
+</body>
+</html>

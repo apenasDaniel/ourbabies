@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;500&family=Laila:wght@300;500&family=Open+Sans&family=Roboto:wght@100&family=Ubuntu:ital,wght@0,300;1,300&display=swap');
+
+
+/* MENU */
+
+ header{
+    background-color: #1DCAD3;
+  } 
+
+.logo{
+    color: white;
+    font-family: Inter;
+}
+
+.navegacao{
+    display: flex;
+    justify-content:space-around;
+}
+
+.nav-link{
+   color: white;
+   font-size: 24px;
+   font-family: Inter;
+}
+
+.nav-link:hover{
+    color: rgba(0, 4, 255, 0.356);
+ }
+
+/* CORPO */
+
+
+ .titulo{
+    color:  #F28F8F;
+    font-family: Inter;
+    font-size: 45px;
+    padding-bottom: 20px;
+}
+
+
+/* BOTAO */
+
+.link{
+    text-decoration: none;
+    color: white;
+}
+
+.link:hover{
+    color: white;
+}
+
+
+.btn{
+    background-color:  #1DCAD3;
+    color: white;
+    border: none;
+    border-radius: 7px;
+}
+
+.imagem{
+    border-radius: 5px;
+    
+}
+
+.btn:hover{
+    background-color: #F28F8F;
+}
+
+
+.link-rodape{
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.link-rodape:hover{
+ color: rgb(0, 4, 255);
+}
+
+
+.cor-titulo-cadastre {
+    color: #F28F8F;
+}
