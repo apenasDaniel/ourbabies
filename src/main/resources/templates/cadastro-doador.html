@@ -20,10 +20,7 @@
               <a class="nav-link" href="/home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/cadastro-doador">Doar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/cadastro-donatario">Receber</a>
+              <a class="nav-link" href="/cadastro-doador">Cadastrar</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/somos">Quem somos</a>
@@ -39,7 +36,7 @@
             <div class=" form text-center col-md-7">
                 <!-- <form action="/salvar-doador" method="post" class="rounded bg-white shadow p-5 mt-2"> -->
                 <form th:action="@{/salvar-doador}" th:object="${doador}" method="post" class="rounded bg-white shadow p-5 mt-2"> 
-                    <h3 class="mb-2 titulo-cadastro">Cadastre-se para doar</h3>
+                    <h3 class="mb-2 titulo-cadastro">Cadastre-se</h3>
                     <div class="fw-normal text-muted mb-4">
                         <p>Já possui conta?</p> <a href="/login" class="fw-bold text-decoration-none clique-aqui">Clique aqui</a>
                     </div>
@@ -65,7 +62,7 @@
                             <label for="floatingCpf">CPF</label>
                         </div>
                         <div class="form-floating col-md-6 mb-3">
-                            <input type="email" name="telefone" class="form-control" id="floatingInput"
+                            <input type="email" name="email" class="form-control" id="floatingInput"
                                 placeholder="name@example.com">
                             <label for="floatingInput">E-mail</label>
                         </div>

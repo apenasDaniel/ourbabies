@@ -16,11 +16,10 @@ public class Doador {
 	private String nome;
 	private String cpf;
 	private String nis_cad;
-	private String telefone;
+	private String email;
 	private String senha;
 	
 	public Doador() {
-		
 	}
 
 	public Integer getId() {
@@ -55,12 +54,12 @@ public class Doador {
 		this.nis_cad = nis_cad;
 	}
 
-	public String getTelefone() {
-		return telefone;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getSenha() {
@@ -70,6 +69,11 @@ public class Doador {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+	
+	
+
+	
 	
 }
 

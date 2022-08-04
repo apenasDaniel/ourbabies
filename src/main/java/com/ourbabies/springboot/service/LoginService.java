@@ -5,18 +5,14 @@ import org.springframework.stereotype.Service;
 import com.ourbabies.springboot.model.Doador;
 import com.ourbabies.springboot.repository.DoadorRepository;
 
-
 @Service
-public class DoadorService {
+public class LoginService {
 
 	@Autowired
 	private DoadorRepository doadorDAO;
 	//Salvar usuário
-	public Doador save(Doador doador) {
-		return doadorDAO.save(doador);		
+	public Doador logar (Doador doador) {
+		return doadorDAO.findByEmailAndSenha(doador.getCpf(), doador.getSenha());		
 	}
-	
-	
-	
-}
 
+}

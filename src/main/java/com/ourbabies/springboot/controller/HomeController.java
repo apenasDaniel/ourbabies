@@ -1,5 +1,7 @@
 package com.ourbabies.springboot.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +20,10 @@ public class HomeController {
 	@Autowired
 	private DoadorRepository doadorDAO;
 	
+	
 	@GetMapping("/")
-	public String index() {
+	public String index(HttpSession session) {
+	//	session.setAttribute("usuario", "daniel");
 		return "home";
 	}
 	
@@ -41,14 +45,10 @@ public class HomeController {
 
 	
 	@GetMapping("/home-logado")
-	public String logado() {
+	public String logado(HttpSession session) {
+      Doador doador =  (Doador) session.getAttribute("doador");
+      System.out.println(doador.getEmail());
 		return "home-logado";
-	}
-	
-	
-	@GetMapping("/login")
-	public String login() {
-		return "login";
 	}
 	
 
@@ -64,16 +64,10 @@ public class HomeController {
 	}
 	
 	
-	
-	
-	
 	@PostMapping("/salvar-doador")
 	public String novoDoador(Doador doador, String verificarSenha) {
-		System.out.println("oi, cheguei");
 		//Verificação de e-mail cadastro no banco de dados,
-		if(doadorDAO.existsByTelefone(doador.getTelefone())) {
-			return "redirect:/cadastro-doador";
-		}
+	
 		if(doadorDAO.existsByCpf(doador.getCpf())) {
 			return "redirect:/cadastro-doador";
 		}
@@ -86,6 +80,8 @@ public class HomeController {
 		return "redirect:/";
 	}
 	
+	
+
 	
 	
 	

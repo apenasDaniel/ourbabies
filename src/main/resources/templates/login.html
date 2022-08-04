@@ -39,27 +39,24 @@
   <section class="wrapper">
     <div class="container mt-5">
       <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 text-center">
-        <!-- <div class="logo">
-                    <img src="./assets/images/logo1.png" class="img-fluid" alt="logo">
-                </div> -->
-        <form class="rounded bg-white shadow p-5">
+        <form th:action="@{/efetuarLogin}" method="post" th:object="${doador}" class ="rounded bg-white shadow p-5">
           <h3 class="mb-2 titulo-login">Faça login</h3>
           <div class="fw-normal text-muted mb-2">
              <p>Não possui conta?</p><a href="/cadastro-doador" class="clique-aqui">Clique aqui</a>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="CPFNIS">
-            <label for="floatingInput">CPF ou NIS</label>
+            <input name = "email" type="text" class="form-control" id="floatingInput" placeholder="CPFNIS">
+            <label for="floatingInput">CPF</label>
           </div>
           <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Senha">
+            <input name ="senha" type="password" class="form-control" id="floatingPassword" placeholder="Senha">
             <label for="floatingPassword">Senha</label>
           </div>
           <div class="mt-2 text-end">
             <a  href="/esqueceu-senha" class="trocar-senha fw-bold text-decoration-none">Esqueceu sua senha?</a>
           </div>
           <div class="d-grid gap-2 col-6 mx-auto mt-4">
-            <button class="btn btn-primary fs-5" type="submit"> <a href="./home-logado"> Entrar </a></button>
+            <button class="btn btn-primary fs-5" type="submit"> Entrar </button>
           </div>
         </form>
       </div>
