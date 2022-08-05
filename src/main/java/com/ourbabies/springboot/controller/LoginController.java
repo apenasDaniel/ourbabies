@@ -30,7 +30,7 @@ public class LoginController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("doadorDados");
-		return "logout";
+		return "redirect:/login";
 	}
   
 	
