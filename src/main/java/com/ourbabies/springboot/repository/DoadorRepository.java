@@ -10,7 +10,7 @@ public interface DoadorRepository extends JpaRepository<Doador, Integer> {
 
 
 	boolean existsByCpf(String cpf);
-    Doador findByEmailAndSenha (String cpf, String senha);
+    Doador findByCpfAndSenha (String cpf, String senha);
     
     
   

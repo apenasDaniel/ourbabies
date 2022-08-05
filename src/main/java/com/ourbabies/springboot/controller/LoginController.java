@@ -26,20 +26,26 @@ public class LoginController {
 	//	System.out.println(usuario);
 		return "login";
 	}
+	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("doadorDados");
+		return "logout";
+	}
   
 	
     @PostMapping("/efetuarLogin")
     public String efetuarLogin(Doador doador, HttpSession session) {
-        System.out.println(doador.getCpf());
-        System.out.println(doador.getSenha());
+//        System.out.println(doador.getCpf());
+//        System.out.println(doador.getSenha());
     	Doador doadorLogado = loginService.logar(doador);
+    	System.out.println(doadorLogado.getEmail());
     
     	
     	if (doadorLogado != null) {
-    		session.setAttribute("doador", doadorLogado);
+    		session.setAttribute("doadorDados", doadorLogado);
          	  return "redirect:/home-logado";
-    	 } 
-    	else {
+    	 } else {
     		 return "redirect:/login";
     	 } 
     }

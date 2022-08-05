@@ -69,11 +69,5 @@ public class Doador {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
-	
-	
-
-	
-	
 }
 

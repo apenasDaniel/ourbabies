@@ -12,7 +12,7 @@ public class LoginService {
 	private DoadorRepository doadorDAO;
 	//Salvar usuário
 	public Doador logar (Doador doador) {
-		return doadorDAO.findByEmailAndSenha(doador.getCpf(), doador.getSenha());		
+		return doadorDAO.findByCpfAndSenha(doador.getCpf(), doador.getSenha());		
 	}
 
 }

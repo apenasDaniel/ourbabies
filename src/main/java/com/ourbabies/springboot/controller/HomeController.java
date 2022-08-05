@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -21,7 +22,7 @@ public class HomeController {
 	private DoadorRepository doadorDAO;
 	
 	
-	@GetMapping("/")
+	@GetMapping("/home")
 	public String index(HttpSession session) {
 	//	session.setAttribute("usuario", "daniel");
 		return "home";
@@ -45,10 +46,16 @@ public class HomeController {
 
 	
 	@GetMapping("/home-logado")
-	public String logado(HttpSession session) {
-      Doador doador =  (Doador) session.getAttribute("doador");
-      System.out.println(doador.getEmail());
-		return "home-logado";
+	public String logado(Model model, HttpSession session) {
+		Doador doadorDados =  (Doador) session.getAttribute("doadorDados");
+		System.out.println(doadorDados);
+		if(doadorDados != null) {
+		      model.addAttribute("doadorSessao", doadorDados);
+		      return "home-logado";
+		} else {
+			return "redirect:/login";
+		}
+		
 	}
 	
 
@@ -77,7 +84,7 @@ public class HomeController {
 		}
 		
 		doadorService.save(doador);
-		return "redirect:/";
+		return "redirect:/home";
 	}
 	
 	
