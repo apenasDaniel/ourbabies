@@ -38,11 +38,6 @@ public class HomeController {
 		return "cadastro-doador";
 	
 	}
-	
-	@GetMapping("/cadastro-donatario")
-	public String donatario() {
-		return "cadastro-donatario";
-	}
 
 	
 	@GetMapping("/home-logado")
