@@ -8,18 +8,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.ourbabies.springboot.model.Doador;
-import com.ourbabies.springboot.repository.DoadorRepository;
-import com.ourbabies.springboot.service.DoadorService;
+import com.ourbabies.springboot.model.Usuario;
+import com.ourbabies.springboot.repository.UsuarioRepository;
+import com.ourbabies.springboot.service.UsuarioService;
 
 @Controller
 public class HomeController {
 
 	@Autowired
-	private DoadorService doadorService;
+	private UsuarioService usuarioService;
 	
 	@Autowired
-	private DoadorRepository doadorDAO;
+	private UsuarioRepository usuarioDAO;
 	
 	
 	@GetMapping("/home")
@@ -33,19 +33,19 @@ public class HomeController {
 		return "somos";
 	}
 	
-	@GetMapping("/cadastro-doador")
-	public String doador() {
-		return "cadastro-doador";
+	@GetMapping("/cadastro-usuario")
+	public String usuario() {
+		return "cadastro-usuario";
 	
 	}
 
 	
 	@GetMapping("/home-logado")
 	public String logado(Model model, HttpSession session) {
-		Doador doadorDados =  (Doador) session.getAttribute("doadorDados");
-		System.out.println(doadorDados);
-		if(doadorDados != null) {
-		      model.addAttribute("doadorSessao", doadorDados);
+		Usuario usuarioDados =  (Usuario) session.getAttribute("usuarioDados");
+		System.out.println(usuarioDados);
+		if(usuarioDados != null) {
+		      model.addAttribute("usuarioSessao", usuarioDados);
 		      return "home-logado";
 		} else {
 			return "redirect:/login";
@@ -66,19 +66,19 @@ public class HomeController {
 	}
 	
 	
-	@PostMapping("/salvar-doador")
-	public String novoDoador(Doador doador, String verificarSenha) {
+	@PostMapping("/salvar-usuario")
+	public String novoUsuario(Usuario usuario, String verificarSenha) {
 		//Verificação de e-mail cadastro no banco de dados,
 	
-		if(doadorDAO.existsByCpf(doador.getCpf())) {
-			return "redirect:/cadastro-doador";
+		if(usuarioDAO.existsByCpf(usuario.getCpf())) {
+			return "redirect:/cadastro-usuario";
 		}
 		//Verificação das senhas de cadastro
-		if(!doador.getSenha().equals(verificarSenha)) {
-			return "redirect:/cadastro-doador";
+		if(!usuario.getSenha().equals(verificarSenha)) {
+			return "redirect:/cadastro-usuario";
 		}
 		
-		doadorService.save(doador);
+		usuarioService.save(usuario);
 		return "redirect:/home";
 	}
 	

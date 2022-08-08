@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.ourbabies.springboot.model.Doador;
-import com.ourbabies.springboot.service.DoadorService;
+import com.ourbabies.springboot.model.Usuario;
+import com.ourbabies.springboot.service.UsuarioService;
 import com.ourbabies.springboot.service.LoginService;
 
 
@@ -21,7 +21,7 @@ public class LoginController {
 	
 
 	@GetMapping("/login")
-	public String login(Doador doador) {
+	public String login(Usuario usuario) {
 	//	String usuario = (String) session.getAttribute("usuario");
 	//	System.out.println(usuario);
 		return "login";
@@ -29,21 +29,21 @@ public class LoginController {
 	
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
-		session.removeAttribute("doadorDados");
+		session.removeAttribute("usuarioDados");
 		return "redirect:/login";
 	}
   
 	
     @PostMapping("/efetuarLogin")
-    public String efetuarLogin(Doador doador, HttpSession session) {
+    public String efetuarLogin(Usuario usuario, HttpSession session) {
 //        System.out.println(doador.getCpf());
 //        System.out.println(doador.getSenha());
-    	Doador doadorLogado = loginService.logar(doador);
-    	System.out.println(doadorLogado.getEmail());
+    	Usuario usuarioLogado = loginService.logar(usuario);
+    	System.out.println(usuarioLogado.getEmail());
     
     	
-    	if (doadorLogado != null) {
-    		session.setAttribute("doadorDados", doadorLogado);
+    	if (usuarioLogado != null) {
+    		session.setAttribute("usuarioDados", usuarioLogado);
          	  return "redirect:/home-logado";
     	 } else {
     		 return "redirect:/login";

@@ -25,7 +25,7 @@
           <a class="nav-link" href="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/cadastro-doador">Cadastrar</a>
+          <a class="nav-link" href="/cadastro-usuario">Cadastrar</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/somos">Quem somos</a>
@@ -36,10 +36,10 @@
   <section class="wrapper">
     <div class="container mt-5">
       <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 text-center">
-        <form th:action="@{/efetuarLogin}" method="post" th:object="${doador}" class ="rounded bg-white shadow p-5">
+        <form th:action="@{/efetuarLogin}" method="post" th:object="${usuario}" class ="rounded bg-white shadow p-5">
           <h3 class="mb-2 titulo-login">Faça login</h3>
           <div class="fw-normal text-muted mb-2">
-             <p>Não possui conta?</p><a href="/cadastro-doador" class="clique-aqui">Clique aqui</a>
+             <p>Não possui conta?</p><a href="/cadastro-usuario" class="clique-aqui">Clique aqui</a>
           </div>
           <div class="form-floating mb-3">
             <input name = "cpf" type="text" class="form-control" id="floatingInput" placeholder="CPFNIS">

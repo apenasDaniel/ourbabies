@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tbl_doador")
-public class Doador {
+public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ public class Doador {
 	private String email;
 	private String senha;
 	
-	public Doador() {
+	public Usuario() {
 	}
 
 	public Integer getId() {
