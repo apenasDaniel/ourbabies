@@ -38,6 +38,13 @@
 }
 
 
+.nome-usuario{
+	color:#F28F8F;
+	font-size: 20px;
+	font-family:Inter;
+}
+
+
 /* BOTAO */
 
 .link{
@@ -77,6 +84,8 @@
 }
 
 .carrosel {
-    margin-left: 350px;
+    margin-left: 150px;
     margin-top: 10px;
+    width:160vh;
+     filter: grayscale(0.2);
 }
