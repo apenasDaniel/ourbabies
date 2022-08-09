@@ -23,31 +23,20 @@
             <ul class="nav">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/cadastro-doador">Doar</a>
+                    <a class="nav-link" href="/cadastro-usuario">Doar</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/cadastro-donatario">Receber</a>
-                </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="/somos">Quem somos</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Sair</a>
                 </li>
-                
-                
-
             </ul>
         </nav>
     </header>
-
-    <main>
-    
-    	<h1 th:text="${doadorSessao.email}"></h1>
-        <h1 th:text="${doadorSessao.cpf}"></h1>
-    
+    <main>    
+    	<h1 th:text="${usuarioSessao.email}"></h1>
+        <h1 th:text="${usuarioSessao.cpf}"></h1>    
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
