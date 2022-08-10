@@ -38,6 +38,10 @@
     padding-bottom: 20px;
 }
 
+.lead {
+    font-size: 17px;
+    text-align: justify;
+}
 
 /* BOTAO */
 
@@ -61,6 +65,11 @@
 .imagem{
     border-radius: 5px;
     
+}
+
+.imagem1 {
+	width: 900px;
+	height: 300px;
 }
 
 .btn:hover{
