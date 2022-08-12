@@ -54,10 +54,7 @@ public class HomeController {
 	}
 	
 
-	@GetMapping("/anuncio")
-	public String anuncio() {
-		return "anuncio";
-	}
+	
 	
 
 	@GetMapping("/esqueceu-senha")
