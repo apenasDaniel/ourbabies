@@ -45,11 +45,9 @@
           </div>
           <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect01">Serviço</label>
-            
             <select name="servico" class="form-select" id="inputGroupSelect01">
 			  <option th:each="status : ${statusServico}" th:value="${status}" th:text="${status}"></option>
 			</select>
-			
           </div>
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>

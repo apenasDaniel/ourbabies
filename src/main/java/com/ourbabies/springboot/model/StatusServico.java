@@ -2,6 +2,6 @@ package com.ourbabies.springboot.model;
 
 public enum StatusServico {
 	
-	Babá, Cózinheiro, Faxina, OUTROS
+	Babá, Cozinheiro, Faxina, Outros
 
 }
