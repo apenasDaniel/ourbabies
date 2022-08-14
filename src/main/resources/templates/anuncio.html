@@ -34,31 +34,29 @@
         <!-- <div class="logo">
                     <img src="./assets/images/logo1.png" class="img-fluid" alt="logo">
                 </div> -->
-        <form class="rounded bg-white shadow p-5 col-6 offset-md-3">
+        <form th:action="@{/salvar-item}" th:object="${item}" method="post" class="rounded bg-white shadow p-5 col-6 offset-md-3">
             <div class="container">
                 <h2 class="mb-2 titulo-login">Faça sua doação.</h2>
                 <p class="fs-5 text-secondary">Preencha os campos abaixo.</p>
             </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="CPFNIS">
+            <input name="nome" type="text" class="form-control" id="floatingInput" placeholder="CPFNIS">
             <label for="floatingInput">Nome do item</label>
           </div>
           <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect01">Serviço</label>
-            <select class="form-select" id="inputGroupSelect01">
-              <option selected>Escolher...</option>
-              <option value="1">Babá</option>
-              <option value="2">Cozinheira(o)</option>
-              <option value="3">Faxina</option>
-              <option value="3">Outros</option>
-            </select>
+            
+            <select name="servico" class="form-select" id="inputGroupSelect01">
+			  <option th:each="status : ${statusServico}" th:value="${status}" th:text="${status}"></option>
+			</select>
+			
           </div>
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
-            <textarea class="form-control" placeholder="Descrição do serviço e item." id="exampleFormControlTextarea1" rows="4"></textarea>
+            <textarea name="descricaoServico" class="form-control" placeholder="Descrição do serviço e item." id="exampleFormControlTextarea1" rows="4"></textarea>
           </div>
           <div class="input-group">
-            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+            <input name="imagem" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
           </div>
           <div class="d-flex justify-content-around mt-4 p-2">
             <button type="reset" class="btn btn-primary w-25 fs-5">Cancelar</button>
