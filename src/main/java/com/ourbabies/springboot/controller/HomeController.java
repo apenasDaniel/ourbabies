@@ -1,6 +1,7 @@
 package com.ourbabies.springboot.controller;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -64,7 +65,7 @@ public class HomeController {
 	
 	
 	@PostMapping("/salvar-usuario")
-	public String novoUsuario(Usuario usuario, String verificarSenha) {
+	public String novoUsuario(@Valid Usuario usuario, String verificarSenha) {
 		//Verificação de e-mail cadastro no banco de dados,
 	
 		if(usuarioDAO.existsByCpf(usuario.getCpf())) {

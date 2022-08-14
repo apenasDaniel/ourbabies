@@ -5,6 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name = "tbl_doador")
@@ -13,11 +19,26 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
+	@NotBlank(message = "Este campo deve ser preenchido")
+	@Size(min = 3, max = 240)
 	private String nome;
+	
+	@NotBlank(message = "Este campo deve ser preenchido")
+	@Size(min = 11, max = 11)
 	private String cpf;
+	
+	@Size(min = 11, max = 11)
 	private String nis_cad;
+	
+	@NotBlank(message = "Este campo deve ser preenchido")
+	@Email
 	private String email;
+	
+	@NotBlank(message = "Este campo deve ser preenchido")
+	@Size(min = 8, max = 16)
 	private String senha;
+	
 	
 	public Usuario() {
 	}
