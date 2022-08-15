@@ -34,7 +34,6 @@ public class Usuario {
 	private String email;
 	
 	
-	@Size(min = 6, max = 16)
 	private String senha;
 	
 	
