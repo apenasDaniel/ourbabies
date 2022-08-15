@@ -1,7 +1,10 @@
 package com.ourbabies.springboot.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,10 +30,23 @@ public class AnuncioController {
 	}
 	
 	@PostMapping("/salvar-item")
-	public String novoItem(Item item) {
-		itemService.save(item);
+	public ModelAndView novoItem(@Valid Item item, BindingResult bindingResult) {
 		
-		return "redirect:/home";
+		if(bindingResult.hasErrors()) {
+			System.out.println("\n********* TEM ERROS ******************\n");
+			
+			
+			ModelAndView mv = new ModelAndView("/anuncio");
+			mv.addObject("statusServico", StatusServico.values());
+			return mv;
+		} else {
+			itemService.save(item);
+			
+			return new ModelAndView("redirect:/anuncio");
+		}
+		
+		
+		
 		
 	}
 	
