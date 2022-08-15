@@ -77,7 +77,7 @@ public class HomeController {
 		}
 		
 		usuarioService.save(usuario);
-		return "redirect:/home";
+		return "redirect:/login";
 	}
 	
 	

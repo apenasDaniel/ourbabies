@@ -33,16 +33,14 @@ public class AnuncioController {
 	public ModelAndView novoItem(@Valid Item item, BindingResult bindingResult) {
 		
 		if(bindingResult.hasErrors()) {
-			System.out.println("\n********* TEM ERROS ******************\n");
-			
-			
+
 			ModelAndView mv = new ModelAndView("/anuncio");
 			mv.addObject("statusServico", StatusServico.values());
 			return mv;
 		} else {
 			itemService.save(item);
 			
-			return new ModelAndView("redirect:/anuncio");
+			return new ModelAndView("redirect:/home-logado");
 		}
 		
 		
