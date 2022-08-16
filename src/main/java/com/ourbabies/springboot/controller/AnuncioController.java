@@ -40,6 +40,7 @@ public class AnuncioController {
 			mv.addObject("statusServico", StatusServico.values());
 			return mv;
 		} else {
+
 		String path = "src/main/resources/static/images/";
 		      File file = new File(path);
 		      String filename = System.currentTimeMillis() + multipartFile.getOriginalFilename();
@@ -50,6 +51,7 @@ public class AnuncioController {
 
 		      itemService.save(item);
 		      return new ModelAndView("redirect:/home-logado");
+
 		}
 	}
 }

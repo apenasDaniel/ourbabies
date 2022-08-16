@@ -97,24 +97,22 @@ public class HomeController {
             }
             if(!usuario.getSenha().equals(verificarSenha)) {
             	listaErros.add("A senha não combina");
-    		}
+    		    }
             modelAndView.addObject("msg", listaErros);
             return modelAndView;
-        	} else {
-            if (usuarioDAO.existsByCpf(usuario.getCpf())) {
-                modelAndView = new ModelAndView("cadastro-usuario");
-                return modelAndView;
+        	  } else {
+              if (usuarioDAO.existsByCpf(usuario.getCpf())) {
+                  modelAndView = new ModelAndView("cadastro-usuario");
+                  return modelAndView;
+              }
+              //Verificação das senhas de cadastro
+
+              usuarioService.save(usuario);
+              modelAndView = new ModelAndView("/login");
+              return modelAndView;
             }
-            //Verificação das senhas de cadastro
-		
 
-            usuarioService.save(usuario);
-            modelAndView = new ModelAndView("/login");
-            return modelAndView;
-        }
+	  }
+
 	}
-
-	
-	
-	
 }
