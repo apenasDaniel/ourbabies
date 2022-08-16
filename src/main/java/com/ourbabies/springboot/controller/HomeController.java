@@ -1,5 +1,7 @@
 package com.ourbabies.springboot.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -9,13 +11,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.ourbabies.springboot.model.Item;
 import com.ourbabies.springboot.model.Usuario;
 import com.ourbabies.springboot.repository.UsuarioRepository;
+import com.ourbabies.springboot.service.ItemService;
 import com.ourbabies.springboot.service.UsuarioService;
 
 @Controller
 public class HomeController {
-
+	
+	@Autowired
+	private ItemService itemService;
+	
 	@Autowired
 	private UsuarioService usuarioService;
 	
@@ -39,14 +46,21 @@ public class HomeController {
 		return "cadastro-usuario";
 	
 	}
-
+	
+	@GetMapping("/error")
+		public String errorPage() {
+		return "redirect:/error";
+	}
 	
 	@GetMapping("/home-logado")
 	public String logado(Model model, HttpSession session) {
 		Usuario usuarioDados =  (Usuario) session.getAttribute("usuarioDados");
 		System.out.println(usuarioDados);
+		List<Item> listaItens = itemService.getAllItem();
+		System.out.println(listaItens);
 		if(usuarioDados != null) {
 		      model.addAttribute("usuarioSessao", usuarioDados);
+			  model.addAttribute("itens", listaItens);
 		      return "home-logado";
 		} else {
 			return "redirect:/login";

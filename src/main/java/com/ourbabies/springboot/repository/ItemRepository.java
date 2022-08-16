@@ -10,6 +10,6 @@ import com.ourbabies.springboot.model.Item;
 @Repository
 public interface ItemRepository extends JpaRepository<Item, Integer> {
     
-   
+	
    
 }
