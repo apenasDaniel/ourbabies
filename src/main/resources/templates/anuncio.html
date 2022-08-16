@@ -34,7 +34,7 @@
         <!-- <div class="logo">
                     <img src="./assets/images/logo1.png" class="img-fluid" alt="logo">
                 </div> -->
-        <form th:action="@{/salvar-item}" th:object="${item}" method="post" class="rounded bg-white shadow p-5 col-6 offset-md-3">
+        <form th:action="@{/salvar-item}" th:object="${item}" method="post" enctype="multipart/form-data" class="rounded bg-white shadow p-5 col-6 offset-md-3">
             <div class="container">
                 <h2 class="mb-2 titulo-login">Faça sua doação.</h2>
                 <p class="fs-5 text-secondary">Preencha os campos abaixo.</p>
@@ -56,7 +56,7 @@
             <div class="invalid-feedback"></div>
           </div>
           <div class="input-group">
-            <input name="imagem" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+            <input name="image" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
             <div class="invalid-feedback"></div>
           </div>
           <div class="d-flex justify-content-around mt-4 p-2">

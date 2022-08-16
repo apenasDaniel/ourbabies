@@ -11,6 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
 @Table(name = "tbl_doador")
@@ -19,23 +20,30 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
-	
+
+
+	@NotEmpty(message = "Nome deve ser preenchido")
+	@NotNull(message = "Nome deve ser preenchido")
 	private String nome;
-	
-	
+
+//	@NotEmpty(message = "CPF deve ser preenchido")
+//	@NotNull(message = "CPF deve ser preenchido")
+	@CPF
 	private String cpf;
-	
-	
+
+	@NotEmpty(message = "NIS deve ser preenchido")
+	@NotNull(message = "NIS deve ser preenchido")
 	private String nis_cad;
-	
-	
+
+
+	@NotEmpty(message = "Email deve ser preenchido")
+	@NotNull(message = "Email deve ser preenchido")
 	@Email
 	private String email;
-	
-	
+
+	@NotEmpty(message = "Senha deve ser preenchido")
+	@NotNull(message = "Senha deve ser preenchido")
 	private String senha;
-	
 	
 	public Usuario() {
 	}

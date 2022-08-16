@@ -80,7 +80,10 @@
                 <div class="col-12 col-md-5">
                     <form>
                         <div class="input-group input-group-sm">
-                             <h1 class = "nome-usuario" > Olá, seja bem-vindo(a):</h1>
+
+                             <h1 class = "nome-usuario" > Olá, seja bem-vindo(a),&nbsp;</h1>
+
+                          
                              <h1 class = "nome-usuario" th:text="${usuarioSessao.nome}"></h1>
                         </div>
                     </form>
@@ -94,272 +97,28 @@
             </div>
             <hr class="mt-3">
             <div class="row">
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch mb-5">
-                    <div class="card text-center bg-light">
-                        <img src="./images/01.webp" class="card-img-top">
-                        <div class="card-header">
-                            <p> Serviço: Faxina </p>
-                        </div>             
-                        <div class="card-body">
-                            <h5 class="card-title">Boneca LOL</h5>
-                            <p class="card-text">
-                                Boneca em bom estado, pronta para encontrar um novo lar.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    Adicionar a lista de pedidos
-                                </button>
-                            </form>
-                            <small class="text-sucess"> 1 ano e meio de uso </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch mb-5">
-                    <div class="card text-center bg-light">
-                        <img src="/images/05.jpg" class="card-img-top">
-                        <div class="card-header">
-                            Serviço: Babá
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Casaquinho vermelho</h5>
-                            <p class="card-text">
-                                Casquinho vermelho masculino.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    Adicionar a lista de pedidos
-                                </button>
-                            </form>
-                            <small class="text-sucess"> 2 meses de uso. </small>
+                    <div th:each="item : ${itens}" class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch mb-5">
+                        <div class="card text-center bg-light">
+                            <img th:src="@{${'./images/' + item.imagem}}" class="card-img-top">
+                            <div class="card-header">
+                                <p> Serviço: Faxina </p>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${item.nome}"></h5>
+                                <p class="card-text" th:text="${item.descricaoServico}">
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <form class="d-block">
+                                    <button>
+                                        Adicionar a lista de pedidos
+                                    </button>
+                                </form>
+                                <small class="text-sucess"> 1 ano e meio de uso </small>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch mb-5">
-                    <div class="card text-center bg-light">
-                        <img src="./images/09.jpg" class="card-img-top">
-                        <div class="card-header">
-                            <p> Serviço: Encanador(a)</p>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Berço</h5>
-                            <p class="card-text">
-                                Berço americano de madeira, em bom estado.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    Adicionar a lista de pedidos
-                                </button>
-                            </form>
-                            <small class="text-sucess"> 2 anos de uso </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch mb-5">
-                    <div class="card text-center bg-light">
-                        <img src="./images/02.png" class="card-img-top">
-                        <div class="card-header">
-                            <p>
-                                <p> Serviço: Cuidador(a) </p>
-                            </p>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Boneco transformer</h5>
-                            <p class="card-text">
-                                Boneco transformer, em bom estado de uso.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    Adicionar a lista de pedidos
-                                </button>
-                            </form>
-                            <small class="text-sucess"> 6 meses de uso </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch mb-5">
-                    <div class="card text-center bg-light">
-                        <img src="./images/06.jfif" class="card-img-top">
-                        <div class="card-header">
-                            Serviço: Outros
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Body infantil</h5>
-                            <p class="card-text">
-                                Body infantil rosa mal foi usado pela minha neném.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    Adicionar a lista de pedidos
-                                </button>
-                            </form>
-                            <small class="text-sucess"> 1 Mês de uso </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch mb-5">
-                    <div class="card text-center bg-light">
-                        <img src="./images/10.jpg" class="card-img-top">
-                        <div class="card-header">
-                            Serviço: Faxina
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Berço</h5>
-                            <p class="card-text">
-                                Berço semi-novo em ótimo estado de uso.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    Adicionar a lista de pedidos
-                                </button>
-                            </form>
-                            <small class="text-sucess"> 1 ano e meio de uso </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./images/03.webp" class="card-img-top">
-                        <div class="card-header">
-                            Serviço: Babá
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Boneca infantil</h5>
-                            <p class="card-text">
-                                Boneca infantil de vestidinho rosa, está em bom estado.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    Adicionar a lista de pedidos
-                                </button>
-                            </form>
-                            <small class="text-sucess"> 2 anos e meio de uso </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./images/07.jfif" class="card-img-top">
-                        <div class="card-header">
-                            Serviço: Cuidador(a)
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Conjuntinho masculino</h5>
-                            <p class="card-text">
-                                Conjunto infantil masculino de ursinho pronto para doação.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    Adicionar a lista de pedidos
-                                </button>
-                            </form>
-                            <small class="text-sucess"> 2 meses de uso </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./images/11.jpg" class="card-img-top">
-                        <div class="card-header">
-                            Serviço: Faxina
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Berço</h5>
-                            <p class="card-text">
-                                Berço americano em MDF, foi muito bem cuidado e está esperando um novo lar.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    Adicionar a lista de pedidos
-                                </button>
-                            </form>
-                            <small class="text-sucess"> 1 ano de uso </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./images/04.png" class="card-img-top">
-                        <div class="card-header">
-                            Serviço: Outros
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Boneca infantil</h5>
-                            <p class="card-text">
-                                Boneca VickBaby em perfeito estado, infelizmente minha filha não brincou muito com ela.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    Adicionar a lista de pedidos
-                                </button>
-                            </form>
-                            <small class="text-sucess"> 1 mês e meio de uso </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./images/08.jpg" class="card-img-top">
-                        <div class="card-header">
-                            Serviço: Encanador
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Pijama de Pinguin</h5>
-                            <p class="card-text">
-                                Pijaminha de pinguin feminino, pouquissímo tempo de uso.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    Adicionar a lista de pedidos
-                                </button>
-                            </form>
-                            <small class="text-sucess"> 1 Mês de uso </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./images/12.webp" class="card-img-top">
-                        <div class="card-header">
-                            Serviço: Outros
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Berço</h5>
-                            <p class="card-text">
-                                Berço de madeira maciça, está em bom estado de uso.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    Adicionar a lista de pedidos
-                                </button>
-                            </form>
-                            <small class="text-sucess"> 8 Meses de uso. </small>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <hr class="mt-3">
     </main>

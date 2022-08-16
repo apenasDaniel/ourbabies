@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500&family=Laila:wght@300;500&family=Open+Sans&family=Roboto:wght@100&family=Ubuntu:ital,wght@0,300;1,300&display=swap');
+
+.menu{
+    background: #1DCAD3;
+    box-shadow: 3px 29px 50px -6px rgba(0,0,0,0.29);
+}
+
+.titulo{
+    color: white;
+    font-family:Laila;
+    font-size: 42px;
+}
+
+.nav-link{
+    color: white;
+    font-size: 24px;
+    font-family: Inter;
+}
+
+.h1{
+    font-family: Inter;
+}
+
+.btn{
+    background: #1DCAD3;
+    color: white;
+    font-size: 20px;
+    font-family:Inter;
+}
+
+.btn:hover{
+    color: white;
+    background-color: #F28F8F ;
+}
+
+h1, h3, h5{
+    font-family: Ubuntu;
+}
