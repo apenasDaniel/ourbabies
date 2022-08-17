@@ -10,10 +10,10 @@ import com.ourbabies.springboot.repository.UsuarioRepository;
 public class UsuarioService {
 
 	@Autowired
-	private UsuarioRepository usuarioDAO;
+	private UsuarioRepository usuarioRepository;
 	//Salvar usuário
 	public Usuario save(Usuario usuario) {
-		return usuarioDAO.save(usuario);		
+		return usuarioRepository.save(usuario);		
 	}
 	
 	

@@ -22,29 +22,34 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 
+	
+	
+	
+	//MÉTODO GET PÁGINA LOGIN
 	@GetMapping("/login")
 	public String login(Usuario usuario) {
-		// String usuario = (String) session.getAttribute("usuario");
-		// System.out.println(usuario);
 		return "login";
 	}
 
+
+   //MÉTODO SAIR DA TELA, (DESLOGAR).
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("usuarioDados");
 		return "redirect:/login";
 	}
 
+	
+	//MÉTODO POST PARA FAZER LOGIN.
 	@PostMapping("/efetuarLogin")
 	public ModelAndView efetuarLogin(Usuario usuario, HttpSession session) {
 		Usuario usuarioLogado = loginService.logar(usuario);
-		// System.out.println(usuarioLogado.getEmail());
 		ModelAndView modelAndView;
         
 		try {
 			if(usuarioLogado != null) {
 				session.setAttribute("usuarioDados", usuarioLogado);
-				modelAndView = new ModelAndView("home-logado");
+				modelAndView = new ModelAndView("redirect:/home-logado");
 				return modelAndView;
 			} else { throw new Exception();
 			

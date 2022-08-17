@@ -24,6 +24,8 @@ public class AnuncioController {
 	@Autowired
 	private ItemService itemService;
 
+	
+	//MÉTODO GET DA TELA DE DOAÇÃO
 	@GetMapping("/anuncio")
 	public ModelAndView anuncio() {
 		ModelAndView mv = new ModelAndView("anuncio");
@@ -32,6 +34,7 @@ public class AnuncioController {
 		return mv;
 	}
 	
+	//MÉTODO POST PARA ENVIAR A DOAÇÃO PARA TELA DE LOGADO
 	@PostMapping("/salvar-item")
 	public ModelAndView novoItem(@RequestParam("image") MultipartFile multipartFile, @Valid Item item, BindingResult bindingResult) throws IOException {
 		if(bindingResult.hasErrors()) {
@@ -40,8 +43,7 @@ public class AnuncioController {
 			mv.addObject("statusServico", StatusServico.values());
 			return mv;
 		} else {
-
-		String path = "src/main/resources/static/images/";
+		      String path = "src/main/resources/static/images/";
 		      File file = new File(path);
 		      String filename = System.currentTimeMillis() + multipartFile.getOriginalFilename();
 		      String absolutePath = file.getAbsolutePath() + "/" + filename;

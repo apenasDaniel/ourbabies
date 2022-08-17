@@ -9,10 +9,10 @@ import com.ourbabies.springboot.repository.UsuarioRepository;
 public class LoginService {
 
 	@Autowired
-	private UsuarioRepository usuarioDAO;
+	private UsuarioRepository usuarioRepository;
 	//Salvar usuário
 	public Usuario logar (Usuario usuario) {
-		return usuarioDAO.findByCpfAndSenha(usuario.getCpf(), usuario.getSenha());		
+		return usuarioRepository.findByCpfAndSenha(usuario.getCpf(), usuario.getSenha());		
 	}
 
 }

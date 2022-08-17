@@ -12,14 +12,14 @@ import com.ourbabies.springboot.repository.ItemRepository;
 public class ItemService {
 
 	@Autowired
-	private ItemRepository itemDAO;
+	private ItemRepository itemRepository;
 	//Salvar item
 	public Item save(Item item) {
-		return itemDAO.save(item);		
+		return itemRepository.save(item);		
 	}
 	
 	public List<Item> getAllItem(){
-	    return itemDAO.findAll();
+	    return itemRepository.findAll();
 	  }
 
 }
