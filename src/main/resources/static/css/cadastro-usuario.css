@@ -59,6 +59,7 @@ header{
 
 .btn:hover{
     background-color: #F28F8F;
+    color:white;
 }
 
 .titulo-cadastro {

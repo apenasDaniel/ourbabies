@@ -9,6 +9,7 @@ header{
     background-color: #1DCAD3;
   } 
 
+
 .logo{
     color: white;
     font-family: Inter;  
@@ -17,6 +18,7 @@ header{
 .navbar { 
     display: flex;
     justify-content:space-around;
+ 
 }
 
 .nav-link{
@@ -78,5 +80,6 @@ header{
     text-decoration: none;
     font-weight: bold;
 }
+
 
 

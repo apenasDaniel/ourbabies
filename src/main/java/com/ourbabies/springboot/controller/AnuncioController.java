@@ -48,7 +48,7 @@ public class AnuncioController {
 		      String filename = System.currentTimeMillis() + multipartFile.getOriginalFilename();
 		      String absolutePath = file.getAbsolutePath() + "/" + filename;
 		      multipartFile.transferTo(new File(absolutePath));
-
+             System.out.println("OLA");
 		      item.setImagem(filename);
 
 		      itemService.save(item);
