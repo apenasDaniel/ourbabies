@@ -13,7 +13,7 @@ public class ItemService {
 
 	@Autowired
 	private ItemRepository itemRepository;
-	//Salvar item
+	//Salvar item escolhido
 	public Item save(Item item) {
 		return itemRepository.save(item);		
 	}

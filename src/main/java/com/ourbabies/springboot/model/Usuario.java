@@ -28,6 +28,7 @@ public class Usuario {
 
 //	@NotEmpty(message = "CPF deve ser preenchido")
 //	@NotNull(message = "CPF deve ser preenchido")
+	
 	@CPF
 	private String cpf;
 

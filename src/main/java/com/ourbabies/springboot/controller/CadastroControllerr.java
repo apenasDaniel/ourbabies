@@ -46,6 +46,7 @@ public class CadastroControllerr {
 	@PostMapping("/salvar-usuario")
 	public ModelAndView novoUsuario(String verificarSenha, @Valid @ModelAttribute(value = "Usuario") Usuario usuario,
 			BindingResult result, Model model) {
+		
 		// Verificação de e-mail cadastro no banco de dados,
 		ModelAndView modelAndView;
 		System.out.println(verificarSenha);
@@ -66,6 +67,7 @@ public class CadastroControllerr {
 				modelAndView = new ModelAndView("cadastro-usuario");
 				return modelAndView;
 			}
+			
 			// Verificação das senhas de cadastro
 
 			usuarioService.save(usuario);
